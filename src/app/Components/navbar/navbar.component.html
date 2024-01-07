@@ -1,0 +1,39 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu_book</mat-icon>
+    </button>
+    <span>EXAM-PORTAL</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+    <button (click)="confirm()" *ngIf="loginService.isLoggedIn()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>logout</mat-icon>
+    </button>
+    <div routerLink="/admin/profile"  *ngIf="loginService.isLoggedIn()&&loginService.getUserRole()=='ADMIN'">
+      <img class="profile-Img" src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80">
+
+      <button  *ngIf="loginService.isLoggedIn()&&loginService.getUserRole()=='ADMIN'" routerLink="/admin/profile" class="example-icon favorite-icon ml20" mat-button class="example-icon" aria-label="Example icon-button with share icon">
+        {{loginService.getUser().userName}}
+      </button>
+    </div>  <div routerLink="/user-dashboard/profile"  *ngIf="loginService.isLoggedIn()&&loginService.getUserRole()=='NORMAL'">
+      <img class="profile-Img" src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80">
+      
+    </div>
+      <button [matMenuTriggerFor]="menu" *ngIf="loginService.isLoggedIn()&&loginService.getUserRole()=='NORMAL'"  class="example-icon favorite-icon ml20" mat-button class="example-icon" aria-label="Example icon-button with share icon">
+        {{loginService.getUser().userName}}
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="menu2"><mat-icon>manage_accounts</mat-icon>Settings</button>
+     </mat-menu>  
+      <mat-menu #menu2="matMenu">
+        <button mat-button mat-menu-button (click)="openDialog()" color="primary"><mat-icon>schedule_send</mat-icon>FeedBack</button>
+      </mat-menu>
+        
+  
+  
+
+  </mat-toolbar>

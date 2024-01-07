@@ -1,0 +1,19 @@
+<mat-card>
+
+    <mat-action-list>
+        <div mat-subheader>Menu</div>
+          <button mat-list-item routerLink="/admin"><mat-icon mat-list-icon>home</mat-icon> Home</button>
+          <button mat-list-item routerLink="/admin/view-users"><mat-icon  mat-list-icon>groups</mat-icon>All Users</button>
+          <button mat-list-item routerLink="/admin/profile"><mat-icon mat-list-icon>person</mat-icon> Profile</button>
+          <button mat-list-item routerLink="/admin/view-category"><mat-icon mat-list-icon>category</mat-icon>Categories</button>
+          <button mat-list-item routerLink="/admin/add-category">
+            <mat-icon mat-list-icon>dashboard_customize</mat-icon> Add Category
+        </button>
+          <button mat-list-item [routerLink]="'/admin/view-quizes/'+0"><mat-icon mat-list-icon>quiz</mat-icon>Quizes</button>
+          <button mat-list-item routerLink="/admin/add-quize"><mat-icon mat-list-icon>add</mat-icon>Add Quizes</button>
+          <button mat-list-item routerLink="/admin/show-user-feedback"><mat-icon mat-list-icon>group</mat-icon>Feedbacks</button>
+          <button mat-list-item [routerLink]="'/admin/ranks/'+0"><mat-icon mat-list-icon>military_tech</mat-icon>UserRanks</button>
+          <button mat-list-item (click)="confirm()"><mat-icon mat-list-icon>logout</mat-icon>Logout </button>
+    </mat-action-list>
+
+</mat-card>

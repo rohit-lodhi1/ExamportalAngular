@@ -1,0 +1,32 @@
+<div class="container text-center mt10">
+<mat-card>
+    <h1  matRipple>Add New Category</h1>
+    <mat-card-content>
+        
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <form >
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Title</mat-label>
+                            <input autofocus type="text" [(ngModel)]="category.title" required name="userName"  matInput placeholder="Enter here Title">
+                            <mat-icon matSuffix>article</mat-icon>
+                            <mat-hint></mat-hint>
+                          </mat-form-field>
+                          <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Description</mat-label>
+                            <textarea type="text" required name="description" [(ngModel)]="category.description" matInput placeholder="Enter here Description" rows="2" ></textarea>
+                            <mat-icon matSuffix>description</mat-icon>
+                            <mat-hint></mat-hint>
+                          </mat-form-field>
+                        <div class="container text-center mt20">
+                            <button mat-raised-button color="primary" (click)="addCategory()">Add</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+</div>

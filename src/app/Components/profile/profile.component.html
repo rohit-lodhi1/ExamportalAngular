@@ -1,0 +1,71 @@
+<mat-card *ngIf="user">
+   
+
+    <mat-card-content>
+        
+<div class="content-wrapper">
+      <div class=" text-center">
+        <h1>Profile</h1>
+      </div>    
+      
+    <div class="container-scroller">
+      
+          <div class="content-wrapper d-flex align-items-center auth">
+            <div class="row flex-grow">
+              <div class="col-12 mx-auto">
+                <div class="auth-form-light text-left p-5">
+                  <form action="upload.php" method="post" enctype="multipart/form-data" style="display: flex;justify-content: center;">
+                      <label for="fileToUpload">
+                         
+                    <div class="profile-pic" style="background-image: url('https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80')">
+                        <span class="glyphicon glyphicon-camera"></span>
+                        <span>Change Image</span>
+                    </div>
+                    </label>
+                    <input type="File" name="fileToUpload" id="fileToUpload">
+                  </form><br>
+                  <div class="container text-center">
+                    <h1 class="mt20">{{user.userFirstName}} {{user.userLastName}}</h1>
+                  </div>
+                   <div class="row">
+                       <div class="col-md-10 offset-md-1">
+                          <table class="table text-center">
+                              <tr>
+                                  <td>Username</td>
+                                  <td>{{user.userName}}</td>
+                              </tr>
+                              <tr>
+                                <td>UserID</td>
+                                <td>EXAM-{{user.userId}}</td>
+                            </tr>
+                            <tr>
+                                <td>Mobile</td>
+                                <td>{{ user.userMobile }}</td>
+                            </tr>
+                            <tr>
+                                <td>Role</td>
+                                <td>{{user.authorities[0].authority}}</td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td>{{user.enabled?'Active':'Not Active'}}</td>
+                            </tr>
+                          </table>
+                       </div>
+                   </div>
+        </div>
+      </div>
+   </div>
+  </div>
+ 
+</div>
+</div>
+
+</mat-card-content>
+<mat-card-actions class="text-center">
+
+  <button mat-raised-button style="margin-right: 44px;" (click)="openDialog()" color="primary">Update</button>
+  <button mat-raised-button style="margin-right: 50px;" color="accent">Share</button>
+
+</mat-card-actions>
+</mat-card>

@@ -1,0 +1,48 @@
+<div class="container text-center">
+    <h1 class="mt20">Questions of {{qtitle}}</h1> 
+</div>
+<div class="bootstrap-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+         
+<div class="container text-center mt20">
+   <button mat-raised-button class="ml20" [routerLink]="'/admin/add-question/'+qId +'/'+qtitle" color="primary">Add Questions</button>
+</div>
+             <mat-card *ngFor="let ques of question ; let i=index " class="mt20">
+                 <mat-card-content>
+                     <p>
+                        <b>Q. {{ i+1 }}</b> <span class="ml20" [innerHTML]="ques.content"></span>
+                     </p>
+                      <div class="container-fluid">
+                          <div class="row">
+                             <div class="col-md-6">
+                                <p><b>1.</b>{{  ques.option1}}</p>
+                             </div>
+                             <div class="col-md-6">
+                                <p><b>2.</b>{{  ques.option2}}</p>
+                             </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6" *ngIf="ques.option3">
+                               <p><b>3.</b>{{  ques.option3}}</p>
+                            </div>
+                            <div class="col-md-6" *ngIf="ques.option4">
+                               <p><b>4.</b>{{  ques.option4}}</p>
+                            </div>
+                         </div>
+                         <mat-divider></mat-divider>
+                         <mat-divider></mat-divider>
+                         <br>
+                         <p><b>Answer :</b> {{ques.answer}}</p>
+                      </div>
+                 </mat-card-content>
+                 <mat-card-actions>
+                  <button mat-raised-button class="ml20" [routerLink]="'/admin/update-question/' + ques.quesId" color="accent">Update</button>
+                  <button mat-fab class="ml20" (click)="confirm(ques.quesId)" color="warn" aria-label="Example icon button with a delete icon">
+                     <mat-icon>delete</mat-icon>
+                   </button>
+                 </mat-card-actions>
+             </mat-card>
+        </div>
+    </div>
+</div>

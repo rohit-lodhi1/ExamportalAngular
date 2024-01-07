@@ -1,0 +1,60 @@
+<div class="row mt20">
+    <div class="col-12 grid-margin">
+      <div class="card">
+        <div class="card-body">
+          <h1 class=" text-center" style="margin-right: 20px;" ><b>Users</b></h1>
+          <form (ngSubmit)="searchResults()">
+          <div class="input-group">
+            <input type="search" name="search" (keyup)="searchResults()" [(ngModel)]="search"  class="form-control rounded" placeholder="Search By Username" aria-label="Search" aria-describedby="search-addon" />
+            <button type="submit" (click)="searchResults()" class="btn btn-outline-primary">search</button>
+          </div>
+        </form>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  
+                  <th> <b>FeedBack Id </b></th>
+                  <th><b> Feedback </b> </th>
+                  <th><b> rating </b> </th>
+                  <th><b> UserID  </b></th>
+                  <th><b> Date  </b></th>
+                  <th><b> Action  </b></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let feed of feedback">
+                    
+                  <td>
+                    <img src="assets/images/faces/face1.jpg" class="me-2" alt="image"> {{feed.fid}}
+                  </td>
+                  <td> {{feed.message}}</td>
+                  <td>  <div class="progress">
+                    <div [ngClass]="{'progress-bar':true ,'bg-gradient-success':feed.rating>3,'bg-gradient-danger':feed.rating<3,'bg-gradient-warning':feed.rating==3}" role="progressbar" [ngStyle]="{'width':feed.rating/5*100+'%'}" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{feed.rating}}</div>
+                  </div> </td>
+                  <td> {{feed.userId}} </td>
+                  <td>
+                   {{feed.date}}
+                  </td>
+                  <td>
+                    <button class="ml10" mat-icon-button color="accent"><mat-icon>visibility</mat-icon></button>
+                    <button (click)="delete(feed.fid)" mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
+                  </td>
+                </tr>
+                     </tbody>  
+                   
+            </table>
+            <div class="paginator">
+                <mat-paginator  (page)="handlePageEvent($event)"  [length]="length"
+                [pageSize]="pageSize"
+                [disabled]="disabled"
+                [showFirstLastButtons]="showFirstLastButtons"
+                [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
+                [hidePageSize]="hidePageSize"
+                [pageIndex]="pageIndex"></mat-paginator>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

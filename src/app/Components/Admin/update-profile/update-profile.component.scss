@@ -1,0 +1,235 @@
+
+  /* password change */
+  .mainDiv {
+    display: flex;
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    font-family: 'Open Sans', sans-serif;
+  }
+ .cardStyle {
+  width: 381px;
+    border-color: white;
+    /* background: #fff; */
+    /* padding: 36px 0; */
+    border-radius: 4px;
+    margin: 30px 0;
+    box-shadow: 0px 0 2px 0 rgba(0,0,0,0.25);
+  }
+#signupLogo {
+  max-height: 100px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.formTitle{
+  font-weight: 600;
+  margin-top: 20px;
+  color: #2F2D3B;
+  text-align: center;
+}
+.inputLabel {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 6px;
+  margin-top: 24px;
+}
+  .inputDiv {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+input {
+  height: 40px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  border: solid 1px #ccc;
+  padding: 0 11px;
+}
+input:disabled {
+  cursor: not-allowed;
+  border: solid 1px #eee;
+}
+.buttonWrapper {
+  margin-top: 40px;
+}
+  .submitButton {
+    width: 70%;
+    height: 40px;
+    margin: auto;
+    display: block;
+    color: #fff;
+    background-color: #065492;
+    border-color: #065492;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.035);
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+.submitButton:disabled,
+button[disabled] {
+  border: 1px solid #cccccc;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+#loader {
+  position: absolute;
+  z-index: 1;
+  margin: -2px 0 0 10px;
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 4px solid #666666;
+  width: 14px;
+  height: 14px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.inputLabel{
+  text-align: initial;
+}
+.navbar .navbar-menu-wrapper .search-field .input-group input {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+
+    .auth .auth-form-light {
+    background: #ffffff;
+    border-radius: 10px;
+}
+.auth form .auth-form-btn {
+    height: 50px;
+    width: 100%;
+    line-height: 1.5;
+}
+.btn-gradient-primary {
+    background: -webkit-gradient(linear, left top, right top, from(#da8cff), to(#9a55ff));
+    background: linear-gradient(to right, #6073e3, #6073e3);
+    border: 0;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+.auth .brand-logo {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+    body {
+        background:lavender;
+    }
+    
+    .form-control:focus {
+        box-shadow: none;
+        border-color: #BA68C8
+    }
+    
+    .profile-button {
+        background: rgb(99, 39, 120);
+        box-shadow: none;
+        border: none
+    }
+    
+    .profile-button:hover {
+        background: #682773
+    }
+    
+    .profile-button:focus {
+        background: #682773;
+        box-shadow: none
+    }
+    
+    .profile-button:active {
+        background: #682773;
+        box-shadow: none
+    }
+    
+    .back:hover {
+        color: #682773;
+        cursor: pointer
+    }
+    
+    .labels {
+        font-size: 11px
+    }
+    
+    .add-experience:hover {
+        background: #BA68C8;
+        color: #fff;
+        cursor: pointer;
+        border: solid 1px #BA68C8
+    }
+    .profile-pic {
+        border-radius: 50%;
+        height: 181px;
+        width: 181px;
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: multiply;
+        vertical-align: middle;
+        text-align: center;
+        color: transparent;
+        transition: all .3s ease;
+        text-decoration: none;
+        cursor: pointer;
+        background-color: lavender;
+    }
+    
+    .profile-pic:hover {
+        background-color: rgba(0,0,0,.5);
+        z-index: 10000;
+        color: #fff;
+        transition: all .3s ease;
+        text-decoration: none;
+    }
+    
+    .profile-pic span {
+        display: inline-block;
+        /* padding-top: 4.5em; */
+        padding-bottom: 4.5em;
+    }
+    
+    form input[type="file"] {
+              display: none;
+              cursor: pointer;
+     }
+     .page-title {
+    color: #343a40;
+    font-size: 2.125rem;
+    margin-bottom: 0;
+}
+@media only screen and (max-width: 400px) {
+    .content-wrapper {
+    background: #f2edf3;
+    padding:0px;
+    width: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+}
+.table{
+    width: 100%;
+border: 2px solid #b1adad;;
+font-weight: 500;
+border-collapse: collapse;
+border-radius: 5%;
+}
+.table tr td{
+padding: 15px 50px;
+border: 0.5px solid #b8b8b9;
+}
+.text-center{
+  display: revert; 
+  text-align: center;
+}

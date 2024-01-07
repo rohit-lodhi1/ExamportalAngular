@@ -1,0 +1,90 @@
+<mat-card class="mt20 ">
+   
+    <div class="container text-center mt20">
+        <h1>Update Profile</h1>
+    </div>
+    <div class="container">
+        <div class="container-scroller">
+            
+                <div class="row flex-grow">
+                  <div class="col-12 mx-auto">
+                    <div class="auth-form-light text-left p-5">
+                      <form action="upload.php" method="post" enctype="multipart/form-data" style="display: flex;justify-content: center;">
+                          <label for="fileToUpload">
+                             
+                        <div class="profile-pic" style="background-image: url('https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80')">
+                            <span class="glyphicon glyphicon-camera"></span>
+                            <span>Change Image</span>
+                        </div>
+                        </label>
+                        <input type="File" name="fileToUpload" id="fileToUpload">
+                      </form><br>
+              </div>
+              </div>
+              </div>
+          
+   
+              </div>
+        
+                  
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <form>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                             <!-- nmaxMarks -->
+                             <mat-form-field class="w100" appearance="outline">
+                                <mat-label>First Name</mat-label>
+                                <input required autofocus type="text" [(ngModel)]="user.userFirstName" required name="userFirstName"  matInput placeholder="Enter here First Name">
+                                <mat-icon matSuffix>confirmation_number</mat-icon>
+                                <mat-hint></mat-hint>
+                              </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                                <!-- number of questions -->
+                                <mat-form-field class="w100" appearance="outline">
+                                    <mat-label>Last Name</mat-label>
+                                    <input required autofocus  type="text" [(ngModel)]="user.userLastName" required name="userLastName"  matInput placeholder="Enter here Last Name">
+                                    <mat-icon matSuffix>format_list_numbered</mat-icon>
+                                    <mat-hint></mat-hint>
+                                  </mat-form-field>
+                        </div>
+                      </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                             <!-- nmaxMarks -->
+                             <mat-form-field class="w100" appearance="outline">
+                                <mat-label>UserId</mat-label>
+                                <input required autofocus type="text" [(ngModel)]="user.userId" disabled required name="userId"  matInput placeholder="Enter here UserName">
+                                <mat-icon matSuffix>confirmation_number</mat-icon>
+                                <mat-hint></mat-hint>
+                              </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                                <!-- number of questions -->
+                                <mat-form-field class="w100" appearance="outline">
+                                    <mat-label>Mobile No</mat-label>
+                                    <input required autofocus  type="text" [(ngModel)]="user.userMobile" required name="userMobile"  matInput placeholder="Enter here MobileNo">
+                                    <mat-icon matSuffix>format_list_numbered</mat-icon>
+                                    <mat-hint></mat-hint>
+                                  </mat-form-field>
+                        </div>
+                      </div>
+
+                    
+                        <br>
+            <!-- category add -->
+           
+            
+              <div class="container text-center mt20">
+                <button mat-raised-button color="primary" (click)="update()">Update</button>
+                <button mat-raised-button color="warn" class="ml20" (click)="onNoClick()">Cancel</button>
+              </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</mat-card>

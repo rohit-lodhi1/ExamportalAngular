@@ -1,0 +1,43 @@
+<mat-card>
+   <mat-card-header>
+      <mat-card-title>
+         <h1>Quizes</h1>
+      </mat-card-title>
+   </mat-card-header>
+</mat-card>
+
+
+<form (ngSubmit)="searchResults()">
+   <div class="input-group mt20">
+       <input type="search" (keyup)="searchResults()" name="search" [(ngModel)]="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+       <button type="submit"  (click)="searchResults()" class="btn btn-outline-primary">search</button>
+     </div>
+   </form>
+   <div class="container text-center mt20 ">
+      <button mat-raised-button class="w100"  routerLink="/admin/add-quize" color="primary">Add Quiz</button>
+  </div>
+<mat-card class="mt20 " *ngFor="let q of quizes">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+         <mat-card-title>
+            {{q.title}}
+         </mat-card-title>
+         <mat-card-subtitle>
+            {{q.category.title}}
+         </mat-card-subtitle>
+      </mat-card-header>
+   <mat-card-content>
+     <p>{{q.description}}</p>
+   </mat-card-content>
+   <mat-card-actions>
+    <button mat-raised-button [routerLink]="'/admin/view-questions/'+q.qid+'/'+q.title" color="primary">Questions</button>
+    <button mat-stroked-button class="ml20" color="primary">Max Marks:{{q.maxMarks}}</button>
+    <button mat-stroked-button class="ml20" color="primary">No. Of Questions:{{q.numberOfQuestions}}</button>
+    <button mat-raised-button class="ml20" [routerLink]="'/admin/quiz/' + q.qid" color="accent">Update</button>
+    <button mat-raised-button class="ml20" [routerLink]="'/admin/view-attempts/' + q.qid" color="primary">Attempts</button>
+    <button mat-fab class="ml20" (click)="confirm(q.qid)" color="warn" aria-label="Example icon button with a delete icon">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button mat-stroked-button class="ml20"[routerLink]="'/admin/ranks/'+q.qid" color="accent">Ranks</button>
+   </mat-card-actions>
+</mat-card>

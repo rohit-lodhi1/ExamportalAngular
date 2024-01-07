@@ -1,0 +1,73 @@
+
+<div class="bootstrap-wrapper" >
+       <div class="container">
+           <div class="row mt20">
+                <div class="col-md-6 offset-md-3">
+                  <mat-card>
+                    <div class="container text-center">
+                        <img src="../../../assets/registration_logo.jpg"/>
+                    </div>
+                    <h1 class="text-center">REGISTRATION</h1>
+                    
+                    <form style="margin-left: 43px;" >
+                        <!--- UserName-->
+                    
+                            <mat-form-field class="full-width" appearance="outline">
+                              <mat-label>Username</mat-label>
+                              <input type="text" required    name="userName" [(ngModel)]="user.userName" matInput placeholder="Enter here">
+                              <mat-icon matSuffix>badge</mat-icon>
+                              <mat-hint>username must be unique....</mat-hint>
+                            </mat-form-field>
+                        <!-- password -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="text" required name="userPassword"  [(ngModel)]="user.userPassword" placeholder="Enter here">
+                            <mat-icon matSuffix>fingerprint</mat-icon>
+                            <mat-hint></mat-hint>
+                          </mat-form-field>
+
+                          <!--firstName-->
+                          <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>FirstName</mat-label>
+                            <input matInput  type="text" required name="userFirstName" [(ngModel)]="user.userFirstName" placeholder="Enter here">
+                            <mat-icon matSuffix>person</mat-icon>
+                            <mat-hint></mat-hint>
+                          </mat-form-field>
+
+                          <!---lastName-->
+                          <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>LastName</mat-label>
+                            <input matInput  type="text" required name="userLastName" [(ngModel)]="user.userLastName" placeholder="Enter here">
+                            <mat-icon matSuffix>person</mat-icon>
+                            <mat-hint></mat-hint>
+                          </mat-form-field>
+                            <!---Email-->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Email</mat-label>
+                                <input type="email"  matInput required name="userEmail" [(ngModel)]="user.userEmail" placeholder="Enter here">
+                                <mat-icon matSuffix>send</mat-icon>
+                                <mat-hint></mat-hint>
+                            </mat-form-field>
+
+                            <!---MobileNo-->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>MobileNo</mat-label>
+                                <input matInput  type="number" required name="userMobileNo" [(ngModel)]="user.userMobile" placeholder="Enter here">
+                                <mat-icon matSuffix>dialpad</mat-icon>
+                                <mat-hint></mat-hint>
+                            </mat-form-field>
+
+                            <div class="container text-center">
+                                <button mat-raised-button (click)="formSubmit()" style="margin-right: 30px;" type="submit" color="primary">Register</button>
+                                <button mat-raised-button style="margin-left: 20px;" routerLink="/login" color="accent">Login</button>
+                            </div>
+
+                    </form>
+                  </mat-card>
+
+
+                </div>
+
+           </div>
+       </div>
+</div>

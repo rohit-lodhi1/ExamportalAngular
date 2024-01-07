@@ -1,0 +1,19 @@
+<a mat-list-item routerLinkActive="active" [routerLink]="'/user-dashboard/ranks/'+0" ><mat-icon mat-list-icon>military_tech</mat-icon>Ranks </a>
+<mat-card>
+
+    <mat-action-list>
+        <div mat-subheader>Menu</div>
+          <a mat-list-item routerLinkActive="active" routerLink="/user-dashboard"><mat-icon  mat-list-icon>home</mat-icon>Home</a>
+          <a mat-list-item routerLinkActive="active" [routerLink]="'/user-dashboard/ranks/'+0" ><mat-icon mat-list-icon>military_tech</mat-icon>Ranks </a>
+          <a mat-list-item routerLinkActive="active" routerLink="/user-dashboard/show-recents" ><mat-icon mat-list-icon>leaderboard</mat-icon>Recents </a>
+          <a mat-list-item routerLinkActive="active" [routerLink]="'/user-dashboard/view-quizes/'+0" ><mat-icon mat-list-icon>vertical_split</mat-icon>All Quizes </a>
+          <a mat-list-item routerLinkActive="active" [routerLink]="'/user-dashboard/view-quizes/'+c.cid" *ngFor="let c of category">
+            <mat-icon mat-list-icon>dashboard </mat-icon>{{c.title}}
+          </a>
+         
+         
+        
+          <button mat-list-item (click)="confirm()" ><mat-icon mat-list-icon>logout</mat-icon>Logout </button>
+    </mat-action-list>
+
+</mat-card>

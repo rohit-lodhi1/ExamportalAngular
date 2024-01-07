@@ -1,0 +1,44 @@
+
+<mat-card class="mt20">
+  <div class="container text-center mt20">
+
+    <h1>All Categories</h1>
+  </div>
+</mat-card>
+<form (ngSubmit)="searchResults()">
+  <div class="input-group mt20">
+      <input type="search" (keyup)="searchResults()" name="search" [(ngModel)]="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+      <button type="submit"  (click)="searchResults()" class="btn btn-outline-primary">search</button>
+    </div>
+  </form>
+<div class="row" >
+  
+  <div class="col-md-3 stretch-card grid-margin mt20" style="cursor: pointer;" routerLink="/admin/add-category"  >
+    <div    class="card bg-gradient-{{colors[1].color}} card-img-holder text-white" style="border-radius: 10px;" >
+      <div class="card-body">
+        <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+        <h2 class="font-weight-normal mb-3">Add Category
+        </h2>
+        <div class="container text-center mt20">
+        <h4 class="card-text">  <i class="fa fa-chain" style="color:rgb(238, 234, 234);float: right;font-size:100px;"></i></h4>
+      <h5>Add New Category</h5>
+      </div>
+     </div>
+    </div>
+  </div>
+
+
+    <div class="col-md-3 stretch-card grid-margin mt20"  *ngFor="let c of categories;index as i" [routerLink]="'/admin/view-quizes/'+c.cid">
+      <div    class="card bg-gradient-{{colors[0].color}} card-img-holder text-white"  style="border-radius: 10px;" >
+        <div class="card-body">
+          <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+          <h2 class="font-weight-normal mb-3">{{c.title}}
+          </h2>
+          <h2 class="mb">23</h2>
+          <h4 class="card-text"> {{c.description}} <i class="fa fa-gg" style="color:rgb(238, 234, 234);float: right;font-size:40px;"></i></h4>
+        </div>
+      </div>
+    </div>
+ 
+
+</div>

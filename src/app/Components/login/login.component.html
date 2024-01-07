@@ -1,0 +1,37 @@
+<div class="bootstrap-wrapper">
+   <div class="container">
+      <div class="row mt20 ">
+          <div class="col-md-6 offset-md-3">
+            <mat-card>
+            <div class="container text-center">
+                <img src="../../../assets/registration_logo.jpg"/>
+            </div>
+            <h1 class="text-center">Login</h1>
+            
+            <form style="margin-left: 43px;" >
+                <!--- UserName-->
+         
+                    <mat-form-field class="full-width" appearance="outline">
+                      <mat-label>Username</mat-label>
+                      <input type="text" required name="userName" [(ngModel)]="loginData.userName" matInput placeholder="Enter here">
+                      <mat-icon matSuffix>badge</mat-icon>
+                      <mat-hint></mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                      <mat-label>Password</mat-label>
+                      <input type="text" required name="userName" [(ngModel)]="loginData.password" matInput placeholder="Enter here">
+                      <mat-icon matSuffix>fingerprint</mat-icon>
+                      <mat-hint></mat-hint>
+                    </mat-form-field>
+                      <div class="container text-center">
+                        <button mat-raised-button (click)="login()" style="margin-right: 30px;" type="submit" color="primary">Login</button>
+                        <button mat-raised-button style="margin-left: 20px;" routerLink="/signup" color="accent">SignUp</button>
+                    </div>
+             </form>
+            </mat-card>
+          </div>
+      </div>
+   </div>
+
+</div>
